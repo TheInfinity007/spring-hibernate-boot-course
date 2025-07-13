@@ -2,7 +2,7 @@ Running spring boot apps
 
 > java -jar mycoolapp.jar
 
-Run Using Maven
+Package and Run Using Maven
 > mvn package
 > mvn spring-boot:run
 
