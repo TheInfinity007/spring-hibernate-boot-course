@@ -17,3 +17,27 @@ Run Test
 > mvn clean compile test
 
 --------------------------------------
+
+### Spring properties
+
+Categories: core, security, data, actuator, test, integrations, devlops, devtools,
+
+# Core
+logging.level.org.springframework=DEBUG
+logging.level.org.hiberate=TRACE
+logging.level.com.github=INFO
+
+# Web
+server.port=7070
+server.servlet.session.timeout=15m  // default http session timeout
+
+# security
+spring.security.user.name=admin
+spring.security.user.password=topsecret
+
+# Data
+spring.datasource.url=jdbc:mysql://localhost:3306/ecommerce
+spring.datasource.username=scott
+spring.datasource.password=liger
+
+--------------------------------------
