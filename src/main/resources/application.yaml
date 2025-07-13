@@ -1,5 +1,29 @@
 spring:
   application:
-    name: spring-hibernate-1
+    name: "spring-hibernate-boot-course"
+
 server:
   port: 8585
+
+management:
+  endpoints:
+    web:
+      exposure:
+#        do not enable beans in prod env
+        include: health,info,beans
+    health:
+      show-details: always
+    path-mapping:
+      health: /health
+  info:
+    env:
+      enabled: true
+info:
+  app:
+    name: "Spring Hibernate boot Course"
+    description: "Learning spring and hibernate"
+    version: "1.0.0"
+
+#logging:
+#  level:
+#    org.springframework.boot.actuate.endpoint: DEBUG
