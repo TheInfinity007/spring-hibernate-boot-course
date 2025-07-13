@@ -24,6 +24,14 @@ info:
     version: "1.0.0"
   project: "Personal project"
 
+
 #logging:
 #  level:
 #    org.springframework.boot.actuate.endpoint: DEBUG
+
+
+# Custom properties here
+coach:
+  name: "Mickey Mouse"
+team:
+  name: The Disney Club
