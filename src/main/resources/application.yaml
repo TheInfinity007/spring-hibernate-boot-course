@@ -9,8 +9,7 @@ management:
   endpoints:
     web:
       exposure:
-#        do not enable beans in prod env
-        include: health,info,beans
+        include: info, health, beans, mappings
     health:
       show-details: always
     path-mapping:
@@ -23,6 +22,7 @@ info:
     name: "Spring Hibernate boot Course"
     description: "Learning spring and hibernate"
     version: "1.0.0"
+  project: "Personal project"
 
 #logging:
 #  level:
