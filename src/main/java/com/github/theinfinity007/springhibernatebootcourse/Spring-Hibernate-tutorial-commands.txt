@@ -41,3 +41,9 @@ spring.datasource.username=scott
 spring.datasource.password=liger
 
 --------------------------------------
+
+Scan base package config
+
+@SpringBootApplication(
+    scanBasePackages = { "com.github.theinfinity.com.mainapp", "com.github.theinfinity.com.secondapp"}
+)
