@@ -1,0 +1,19 @@
+Running spring boot apps
+
+> java -jar mycoolapp.jar
+
+Run Using Maven
+> mvn package
+> mvn spring-boot:run
+
+--------------------------------------
+
+WAR - Web Application Archive
+Deploy WAR to tomcat, JBoss, WebSphere
+
+--------------------------------------
+
+Run Test
+> mvn clean compile test
+
+--------------------------------------
