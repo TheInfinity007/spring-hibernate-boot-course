@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class WorkoutController {
 
     private Coach coach;
+    private Coach anotherCoach;
 
     /*
     // Constructor injection
@@ -44,10 +45,26 @@ public class WorkoutController {
     }
     */
 
+    /*
     @Autowired
     public WorkoutController(@Qualifier("cricketCoach") Coach coach) {
         System.out.println("Initializing " + getClass().getSimpleName());
         this.coach = coach;
+    }
+    */
+
+    // @Scopes example
+    @Autowired
+    public WorkoutController(@Qualifier("cricketCoach") Coach coach, @Qualifier("cricketCoach") Coach anotherCoach) {
+        System.out.println("Initializing " + getClass().getSimpleName());
+        this.coach = coach;
+        this.anotherCoach = anotherCoach;
+    }
+
+    @GetMapping("/check")
+    public String check(){
+        // It will be true in case of coach is singleton scope, and in prototype scope, it will false
+        return "Comparing beans: myCoach == anotherCoach, " + (coach == anotherCoach);
     }
 
     @GetMapping("/dailyworkout")
