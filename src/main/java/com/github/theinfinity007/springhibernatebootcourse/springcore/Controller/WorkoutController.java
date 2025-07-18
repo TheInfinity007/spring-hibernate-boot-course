@@ -35,10 +35,18 @@ public class WorkoutController {
     }
     */
 
+    /*
     // Instead of specifying a qualier, we can specify the @Primary annotation in the service and
     // spring will pick the primary automatically
     @Autowired
     public WorkoutController(Coach coach) {
+        this.coach = coach;
+    }
+    */
+
+    @Autowired
+    public WorkoutController(@Qualifier("cricketCoach") Coach coach) {
+        System.out.println("Initializing " + getClass().getSimpleName());
         this.coach = coach;
     }
 
