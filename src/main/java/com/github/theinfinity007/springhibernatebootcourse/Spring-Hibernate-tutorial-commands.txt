@@ -47,3 +47,32 @@ Scan base package config
 @SpringBootApplication(
     scanBasePackages = { "com.github.theinfinity.com.mainapp", "com.github.theinfinity.com.secondapp"}
 )
+
+--------------------------------------
+
+Hibernate
+* Frameworkd for persisting /saving Java Objects in a database
+* hibernate.org/orm
+
+Benefits of Hibernate:
+* Handles all low level SQL
+* minimize the amount of JDBC code you have to devleop
+* provide the object to relational mapping (ORM)
+
+JPA
+* Jakarta persistence API (previously know as Java Persistence API)
+* Standard API for object to relational mapping (ORM)
+* Only a specification
+* Defines a set of interfaces
+* Requires an implementation to be usable
+
+Vendors implementing JPA
+Hibernate, EclipseLink, etc
+
+Benefits of JPA
+* By having a stardard API, you are not locked to vendor's implementation
+* Maintain portable, flexible code by coding to JPA spec (interfaces)
+* Can theoretically switch vendor implementations
+     For eg, if vendor ABC stops supporting their product
+     you could switch to vendor XYZ without vendor lock in
+
