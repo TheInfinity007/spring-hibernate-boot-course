@@ -53,12 +53,20 @@ public class WorkoutController {
     }
     */
 
-    // @Scopes example
+    /*
+    // @Scopes example, singleton and prototype
     @Autowired
     public WorkoutController(@Qualifier("cricketCoach") Coach coach, @Qualifier("cricketCoach") Coach anotherCoach) {
         System.out.println("Initializing " + getClass().getSimpleName());
         this.coach = coach;
         this.anotherCoach = anotherCoach;
+    }
+    */
+
+    @Autowired
+    public WorkoutController(@Qualifier("cricketCoach") Coach coach) {
+        System.out.println("Initializing " + getClass().getSimpleName());
+        this.coach = coach;
     }
 
     @GetMapping("/check")
