@@ -63,8 +63,17 @@ public class WorkoutController {
     }
     */
 
+    /*
     @Autowired
     public WorkoutController(@Qualifier("cricketCoach") Coach coach) {
+        System.out.println("Initializing " + getClass().getSimpleName());
+        this.coach = coach;
+    }
+    */
+
+    // Java bean config
+    @Autowired
+    public WorkoutController(@Qualifier("swimCoach") Coach coach) {
         System.out.println("Initializing " + getClass().getSimpleName());
         this.coach = coach;
     }
