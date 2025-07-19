@@ -21,6 +21,7 @@ public class CricketCoach implements Coach {
         System.out.println("In doMyStartupStuff(): " + getClass().getSimpleName());
     }
 
+//  Note: PreDestroy does not get called in case of prototype scope
     @PreDestroy
     public void doMyCleanupStuff(){
         System.out.println("In doMyCleanupStuff(): " + getClass().getSimpleName());
