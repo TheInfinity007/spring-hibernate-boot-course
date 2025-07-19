@@ -73,7 +73,7 @@ public class WorkoutController {
 
     // Java bean config
     @Autowired
-    public WorkoutController(@Qualifier("swimCoach") Coach coach) {
+    public WorkoutController(@Qualifier("aquaticCoach") Coach coach) {
         System.out.println("Initializing " + getClass().getSimpleName());
         this.coach = coach;
     }
