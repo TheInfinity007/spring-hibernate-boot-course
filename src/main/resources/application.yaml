@@ -14,6 +14,11 @@ spring:
     username: root
     password: root
 
+# Configure JPA/Hibernate to auto drop and then create the table, should not be using in prod env
+  jpa:
+    hibernate:
+      ddl-auto: create
+
 server:
   port: 8585
 #  servlet:
@@ -45,6 +50,13 @@ logging:
     # Reduce logging level, set logging level to warn
     root: warn
 
+    # add logging configs to display SQL statements and values as well with the help of jdbc bind
+    org:
+      hibernate:
+        SQL: debug
+        orm:
+          jdbc:
+            bind: trace
 
 # Custom properties here
 coach:
