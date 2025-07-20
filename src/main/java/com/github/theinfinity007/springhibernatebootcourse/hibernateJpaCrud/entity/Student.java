@@ -1,4 +1,4 @@
-package com.github.theinfinity007.springhibernatebootcourse.springcore.entity;
+package com.github.theinfinity007.springhibernatebootcourse.hibernateJpaCrud.entity;
 
 import jakarta.persistence.*;
 

@@ -30,11 +30,5 @@ public class SpringHibernateBootCourseApplication {
 		};
 	}
 
-	// This command link runner will be executed after the spring beans have been loaded
-	@Bean
-	public CommandLineRunner commandLineRunner(String[] args) {
-		return runner -> {
-			System.out.println("Hello World");
-		};
-	}
+
 }
