@@ -27,8 +27,19 @@ public class StartupConfig {
 
 //            updateStudent(studentDAO);
 
-            deleteStudent(studentDAO);
+//            deleteStudent(studentDAO);
+
+            deleteAllStudent(studentDAO);
         };
+    }
+
+    private void deleteAllStudent(StudentDAO studentDAO) {
+        System.out.println("\nExecuting deleteAllStudent");
+
+        System.out.println("Deleting all students");
+        int numRecordsDeleted = studentDAO.deleteAll();
+
+        System.out.println("Deleted Records Count: " + numRecordsDeleted);
     }
 
     private void deleteStudent(StudentDAO studentDAO) {
