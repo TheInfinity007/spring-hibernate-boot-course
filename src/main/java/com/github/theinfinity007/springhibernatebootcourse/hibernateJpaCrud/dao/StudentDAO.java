@@ -4,4 +4,6 @@ import com.github.theinfinity007.springhibernatebootcourse.hibernateJpaCrud.enti
 
 public interface StudentDAO {
     void save(Student student);
+
+    Student findById(Integer id);
 }

@@ -11,12 +11,33 @@ public class StartupConfig {
 
     // This command link runner will be executed after the spring beans have been loaded
     @Bean
-    public CommandLineRunner commandLineRunner(StudentDAO studentDao) {
+    public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
-//            createStudent(studentDao);
+//            createStudent(studentDAO);
 
-            createMultipleStudents(studentDao);
+//            createMultipleStudents(studentDAO);
+
+            readStudent(studentDAO);
         };
+    }
+
+    private void readStudent(StudentDAO studentDAO) {
+        System.out.println("Creating new student object ...");
+        Student newStudent = new Student("Paul", "Walker", "pwalker@yopmail.com");
+
+        // save the student object
+        System.out.println("Saving the student ...");
+        studentDAO.save(newStudent);
+
+        int id = newStudent.getId();
+        // display id of the saved student
+        System.out.println("Saved student. Generated id: " + id);
+
+        System.out.println("Retrieving student with id: " + id);
+        Student student = studentDAO.findById(id);
+
+        // display
+        System.out.println("Found the student: " + student);
     }
 
     private void createMultipleStudents(StudentDAO studentDAO) {
