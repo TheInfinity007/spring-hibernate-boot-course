@@ -25,8 +25,23 @@ public class StartupConfig {
 
 //            queryForStudentsByLastName(studentDAO);
 
-            updateStudent(studentDAO);
+//            updateStudent(studentDAO);
+
+            deleteStudent(studentDAO);
         };
+    }
+
+    private void deleteStudent(StudentDAO studentDAO) {
+        System.out.println("\nExecuting deleteStudent");
+
+        Student student = createStudent(studentDAO);
+        System.out.println("Student before delete: " + student);
+
+        System.out.println("Deleting the student with id: " + student.getId());
+
+        studentDAO.delete(student.getId());
+
+        System.out.println("Student deleted");
     }
 
     private void updateStudent(StudentDAO studentDAO) {
