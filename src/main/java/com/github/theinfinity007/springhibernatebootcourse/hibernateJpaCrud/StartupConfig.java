@@ -21,10 +21,26 @@ public class StartupConfig {
 
 //            readStudent(studentDAO);
 
-            queryForStudents(studentDAO);
+//            queryForStudents(studentDAO);
 
-            queryForStudentsByLastName(studentDAO);
+//            queryForStudentsByLastName(studentDAO);
+
+            updateStudent(studentDAO);
         };
+    }
+
+    private void updateStudent(StudentDAO studentDAO) {
+        System.out.println("\nExecuting updateStudent");
+
+        Student student = createStudent(studentDAO);
+        System.out.println("Student before update: " + student);
+
+        System.out.println("Updating the student");
+
+        student.setFirstName("Dome");
+        Student updatedStudent = studentDAO.update(student);
+
+        System.out.println("Updated student: " + updatedStudent);
     }
 
     private void queryForStudentsByLastName(StudentDAO studentDAO) {
@@ -75,7 +91,7 @@ public class StartupConfig {
         System.out.println("Saved student.. ");
     }
 
-    private void createStudent(StudentDAO studentDAO) {
+    private Student createStudent(StudentDAO studentDAO) {
         // Create the student object
         System.out.println("Creating new student object ...");
         Student newStudent = new Student("Paul", "Walker", "pwalker@yopmail.com");
@@ -86,5 +102,7 @@ public class StartupConfig {
 
         // display id of the saved student
         System.out.println("Saved student. Generated id: " + newStudent.getId());
+
+        return newStudent;
     }
 }
