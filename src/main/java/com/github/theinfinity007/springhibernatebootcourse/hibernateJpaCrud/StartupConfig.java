@@ -6,6 +6,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.List;
+
 @Configuration
 public class StartupConfig {
 
@@ -17,8 +19,28 @@ public class StartupConfig {
 
 //            createMultipleStudents(studentDAO);
 
-            readStudent(studentDAO);
+//            readStudent(studentDAO);
+
+            queryForStudents(studentDAO);
+
+            queryForStudentsByLastName(studentDAO);
         };
+    }
+
+    private void queryForStudentsByLastName(StudentDAO studentDAO) {
+        System.out.println("\nExecuting queryForStudentsByLastName");
+        List<Student> res = studentDAO.findByLastName("walker");
+        for(Student student: res){
+            System.out.println(student);
+        }
+    }
+
+    private void queryForStudents(StudentDAO studentDAO) {
+        System.out.println("\nExecuting queryForStudents");
+        List<Student> res = studentDAO.findAll();
+        for(Student student: res){
+            System.out.println(student);
+        }
     }
 
     private void readStudent(StudentDAO studentDAO) {
