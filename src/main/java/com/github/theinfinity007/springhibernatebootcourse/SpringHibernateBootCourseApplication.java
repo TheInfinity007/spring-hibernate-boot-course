@@ -11,7 +11,6 @@ public class SpringHibernateBootCourseApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringHibernateBootCourseApplication.class, args);
-		System.out.println("Application started");
 	}
 
 	@Bean
@@ -28,6 +27,14 @@ public class SpringHibernateBootCourseApplication {
 
 				System.out.println("Total Beans = " + beans.length);
 			}
+		};
+	}
+
+	// This command link runner will be executed after the spring beans have been loaded
+	@Bean
+	public CommandLineRunner commandLineRunner(String[] args) {
+		return runner -> {
+			System.out.println("Hello World");
 		};
 	}
 }
