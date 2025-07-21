@@ -17,7 +17,7 @@ public class StartupConfig {
         return runner -> {
 //            createStudent(studentDAO);
 
-            createMultipleStudents(studentDAO);
+//            createMultipleStudents(studentDAO);
 
 //            readStudent(studentDAO);
 

@@ -86,3 +86,8 @@ type/sub-type
 
 text/html, text/plain
 application/json, application/xml,..
+
+
+Jackson Data binding
+JSON-to-POJO(deserialization) -> setter method
+POJO-to-JSON (serialization) -> getter method
