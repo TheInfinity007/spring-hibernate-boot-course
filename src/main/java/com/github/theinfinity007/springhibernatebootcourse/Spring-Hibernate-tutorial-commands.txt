@@ -76,3 +76,13 @@ Benefits of JPA
      For eg, if vendor ABC stops supporting their product
      you could switch to vendor XYZ without vendor lock in
 
+Weather report
+currency converter app
+movie tickets app
+Customer relationship manager (CRM) app
+
+MIME: multipurpose internet mail extension
+type/sub-type
+
+text/html, text/plain
+application/json, application/xml,..
