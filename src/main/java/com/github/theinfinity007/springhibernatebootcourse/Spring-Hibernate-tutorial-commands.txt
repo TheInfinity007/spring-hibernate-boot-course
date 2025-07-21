@@ -91,3 +91,10 @@ application/json, application/xml,..
 Jackson Data binding
 JSON-to-POJO(deserialization) -> setter method
 POJO-to-JSON (serialization) -> getter method
+
+Error Handline
+* Create a custom error response class
+* Create a custom exception class
+* Update the rest endpoint to throw exception if entity is not found
+* Add an exception handler method using @ExceptionHandler
+
