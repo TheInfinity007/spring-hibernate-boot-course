@@ -10,7 +10,7 @@ spring:
 
 # datasource details
   datasource:
-    url: jdbc:mysql://localhost:3306/student_tracker
+    url: jdbc:mysql://localhost:3306/sprint_hibernate_course
     username: root
     password: root
 
