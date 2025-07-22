@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("/api/employees")
 public class EmployeeController {
 
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     @Autowired
     EmployeeController(EmployeeService employeeService) {
@@ -33,6 +33,14 @@ public class EmployeeController {
         }
 
         return employee;
+    }
+
+    @PostMapping("")
+    public Employee addEmployee(@RequestBody Employee employee){
+        employee.setId(0);  // setting id to 0 allow the dao to insert the entity
+
+        Employee createdEmployee = employeeService.save(employee);
+        return createdEmployee;
     }
 
 }
