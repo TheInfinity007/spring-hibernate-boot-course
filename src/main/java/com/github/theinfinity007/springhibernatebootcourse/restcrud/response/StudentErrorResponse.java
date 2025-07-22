@@ -1,4 +1,4 @@
-package com.github.theinfinity007.springhibernatebootcourse.restcrud.controller;
+package com.github.theinfinity007.springhibernatebootcourse.restcrud.response;
 
 public class StudentErrorResponse {
     private int status;

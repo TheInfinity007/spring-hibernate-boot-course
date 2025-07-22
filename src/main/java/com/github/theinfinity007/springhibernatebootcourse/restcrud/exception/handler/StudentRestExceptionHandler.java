@@ -1,6 +1,6 @@
 package com.github.theinfinity007.springhibernatebootcourse.restcrud.exception.handler;
 
-import com.github.theinfinity007.springhibernatebootcourse.restcrud.controller.StudentErrorResponse;
+import com.github.theinfinity007.springhibernatebootcourse.restcrud.response.StudentErrorResponse;
 import com.github.theinfinity007.springhibernatebootcourse.restcrud.exception.StudentNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

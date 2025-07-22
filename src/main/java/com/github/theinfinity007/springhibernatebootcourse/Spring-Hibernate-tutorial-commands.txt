@@ -104,3 +104,8 @@ Error Handline
 * pre process requests to controllers
 * post process response to handle exceptions
 * Perfect for global exception handling
+
+
+@Service
+* applied to service implementations
+* spring will automatically register the service implementation using component scanning
