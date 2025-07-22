@@ -98,3 +98,9 @@ Error Handline
 * Update the rest endpoint to throw exception if entity is not found
 * Add an exception handler method using @ExceptionHandler
 
+
+@ControllerAdvice
+* similar to interceptor / filter
+* pre process requests to controllers
+* post process response to handle exceptions
+* Perfect for global exception handling
