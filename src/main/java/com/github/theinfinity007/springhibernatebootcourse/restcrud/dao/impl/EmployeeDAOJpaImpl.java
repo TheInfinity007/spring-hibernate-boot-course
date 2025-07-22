@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public class EmployeeDAOJpaImpl implements EmployeeDAO {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     @Autowired
     EmployeeDAOJpaImpl(EntityManager entityManager){
@@ -23,5 +23,23 @@ public class EmployeeDAOJpaImpl implements EmployeeDAO {
     public List<Employee> findAll(){
         TypedQuery<Employee> query = entityManager.createQuery("FROM Employee", Employee.class);
         return query.getResultList();
+    }
+
+    @Override
+    public Employee findById(int id) {
+        return entityManager.find(Employee.class, id);
+    }
+
+    @Override
+    public Employee save(Employee employee) {
+        // if the employee has the id = 0, it will insert
+        // otherwise it will update the document
+        return entityManager.merge(employee);
+    }
+
+    @Override
+    public void deleteById(int id) {
+        Employee employee = entityManager.find(Employee.class, id);
+        entityManager.remove(employee);
     }
 }
