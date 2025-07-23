@@ -19,6 +19,11 @@ spring:
     hibernate:
       ddl-auto: update
 
+#  Spring data rest properties
+  data:
+    rest:
+      base-path: /magic-api
+
 server:
   port: 8585
 #  servlet:
