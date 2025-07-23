@@ -90,4 +90,17 @@ public class EmployeeController {
         return objectMapper.convertValue(employeeNode, Employee.class);
     }
 
+    @DeleteMapping("/{employeeId}")
+    public String deleteMapping(@PathVariable int employeeId){
+        Employee employee = employeeService.findById(employeeId);
+
+        if (employee == null) {
+            throw new RuntimeException("Employee not found with id: " + employeeId);
+        }
+
+        employeeService.deleteById(employeeId);
+
+        return "Employee deleted successfully";
+    }
+
 }
