@@ -49,6 +49,16 @@ info:
   project: "Personal project"
 
 
+springdoc:
+  # configure customer path for swagger-ui
+  swagger-ui:
+    path: /documentation
+
+  # configure customer path for swagger-ui
+  api-docs:
+    path: /my-api-docs
+
+
 logging:
   level:
 #    org.springframework.boot.actuate.endpoint: DEBUG

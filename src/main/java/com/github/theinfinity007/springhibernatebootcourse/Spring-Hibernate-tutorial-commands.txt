@@ -118,3 +118,9 @@ ObjectMapper - Jackson
     - allow merging of json nodes
     - provides type safety for conversions: Java <-> JSON
 * It is pre-configured by spring boot
+
+
+* Swagger
+* Default: http://localhost:8080/swagger-ui/index.html
+* Application config to update the path
+    - springdoc.swagger-ui.path=/documentation.html
