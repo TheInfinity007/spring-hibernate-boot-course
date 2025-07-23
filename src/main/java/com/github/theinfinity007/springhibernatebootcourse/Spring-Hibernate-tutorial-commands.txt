@@ -109,3 +109,12 @@ Error Handline
 @Service
 * applied to service implementations
 * spring will automatically register the service implementation using component scanning
+
+
+ObjectMapper - Jackson
+* ObjectMapper is a helper class in the jackson library for JSON processing
+* it provides the following support
+    - convert java object to json and vice-versa
+    - allow merging of json nodes
+    - provides type safety for conversions: Java <-> JSON
+* It is pre-configured by spring boot
