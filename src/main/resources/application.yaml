@@ -24,6 +24,12 @@ spring:
     rest:
       base-path: /magic-api
 
+  # Spring security user details
+  security:
+    user:
+      name: admin
+      password: admin
+
 server:
   port: 8585
 #  servlet:
