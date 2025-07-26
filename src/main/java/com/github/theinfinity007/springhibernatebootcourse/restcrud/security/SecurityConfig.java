@@ -55,6 +55,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/api/employees/**").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.PATCH, "/api/employees/**").hasRole("MANAGER")
                         .requestMatchers(HttpMethod.DELETE, "/api/employees/**").hasRole("ADMIN")
+                        .anyRequest().permitAll()
         );
 
         // Use HTTP Basic authentication
