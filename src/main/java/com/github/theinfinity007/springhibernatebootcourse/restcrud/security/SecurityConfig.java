@@ -17,7 +17,8 @@ import javax.sql.DataSource;
 @Configuration
 public class SecurityConfig {
 
-    // Add support for JDBC for the users basic authorization
+    // Add support for JDBC for the users basic authorization.
+    // Spring boot will use the default table, i.e users and authorities for the user creds and roles
     @Bean
     public UserDetailsManager jdbcUserDetailsManager(DataSource datasource){
         // telling spring boot to use the JDBC authentication with our data source
