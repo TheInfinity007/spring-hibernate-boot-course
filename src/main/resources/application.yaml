@@ -79,6 +79,12 @@ logging:
           jdbc:
             bind: trace
 
+      # Update the spring framework security log level
+      springframework:
+        security: info
+
+
+
 # Custom properties here
 coach:
   name: "Mickey Mouse"
