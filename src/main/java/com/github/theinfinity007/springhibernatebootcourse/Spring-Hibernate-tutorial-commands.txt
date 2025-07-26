@@ -172,3 +172,44 @@ INSERT INTO authorities VALUES
 ('mary2', 'ROLE_MANAGER'),
 ('susan2', 'ROLE_MANAGER'),
 ('susan2', 'ROLE_ADMIN')
+
+
+
+
+
+-------------------------------------------------
+
+SQL Script for custom tables for user basic auth and roles
+
+CREATE TABLE `members` (
+  `user_id` varchar(50) NOT NULL,
+  `pwd` varchar(68) NOT NULL,
+  enabled SMALLINT NOT NULL,
+  PRIMARY KEY (`user_id`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+
+CREATE TABLE `roles` (
+  user_id varchar(50) NOT NULL,
+  role varchar(50) NOT NULL,
+
+  UNIQUE KEY `authorities_idx_1` (`user_id`, `role`),
+
+  CONSTRAINT `fk_roles_user_id` FOREIGN KEY (`user_id`) REFERENCES `members` (`user_id`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+INSERT INTO members
+values
+('john3', '{bcrypt}$2a$10$yiZPPbGBYpxjl1bXtNE/f.ubUEWqDAXeNMCpYuWyPB1yXOc1IzBwC', 1),
+('mary3', '{bcrypt}$2a$10$iXYMpAB74awTeEH3H6U3l.ebwaUtuqgtfnzrp1qKJjNUXmIpSGuNS', 1),
+('susan3', '{bcrypt}$2a$10$m0mR2Lg6p3Uhg9IzN4ZcUOys5piqGoAUVQ6GjfN0oGqoWYniVCyrG', 1)
+
+INSERT INTO roles VALUES
+('john3', 'ROLE_EMPLOYEE'),
+('mary3', 'ROLE_EMPLOYEE'),
+('susan3', 'ROLE_EMPLOYEE'),
+('mary3', 'ROLE_MANAGER'),
+('susan3', 'ROLE_MANAGER'),
+('susan3', 'ROLE_ADMIN')

@@ -17,6 +17,7 @@ import javax.sql.DataSource;
 @Configuration
 public class SecurityConfig {
 
+    /*
     // Add support for JDBC for the users basic authorization.
     // Spring boot will use the default table, i.e users and authorities for the user creds and roles
     @Bean
@@ -24,6 +25,25 @@ public class SecurityConfig {
         // telling spring boot to use the JDBC authentication with our data source
         return new JdbcUserDetailsManager(datasource);
     }
+    */
+
+    // Add support for JDBC for the users basic authorization.
+    // Spring boot will use the default table, i.e users and authorities for the user creds and roles
+    @Bean
+    public UserDetailsManager jdbcCustomUserDetailsManager(DataSource datasource){
+        // telling spring boot to use the JDBC authentication with our data source
+        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(datasource);
+
+        // define query to retrieve a user by username
+        jdbcUserDetailsManager.setUsersByUsernameQuery("SELECT user_id, pwd, enabled from members where user_id = ?");
+
+        // define query to retrieve the authorities/roles by username
+        jdbcUserDetailsManager.setAuthoritiesByUsernameQuery("SELECT user_id, role FROM roles where user_id = ?");
+
+        return jdbcUserDetailsManager;
+    }
+
+
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
