@@ -213,3 +213,49 @@ INSERT INTO roles VALUES
 ('mary3', 'ROLE_MANAGER'),
 ('susan3', 'ROLE_MANAGER'),
 ('susan3', 'ROLE_ADMIN')
+
+
+------------------------------------------------------------------------------------------
+
+Components of a spring MVC Application
+
+* A set of web pages to layout UI components
+* A collection of spring beans (controllers, services, etc...)
+* spring configuration (XML, Annotations or Java)
+
+
+Web Browser         -> Front Controller ( Dispatcher servlet )
+                                | (model)
+                            Controller
+                                | (model)
+Web Browse          <-      View Template
+
+
+Model -> Model objects contains data
+
+Controller
+* Code created by developer
+* Contains your business logic
+    - Handle the request
+    - Store/retrieve data (db, web service)
+    - Place data in model
+* Send to appropriate view template
+
+Model
+* Contains your data
+* Store/retrieve data via backend systems
+    - database, web service, etc...
+    - Use a spring bean if you like
+* Place your data in the model
+    - Data can be any java object/collection
+
+View Template
+* Spring MVC is flexible
+    - support many view templates eg. thymeleaf
+* Recommended: Thymeleaf
+* Developer creates a page
+    - Displays data
+
+
+
+
