@@ -242,7 +242,7 @@ Controller
 * Send to appropriate view template
 
 Model
-* Contains your data
+* Contains your data (Container for the application data)
 * Store/retrieve data via backend systems
     - database, web service, etc...
     - Use a spring bean if you like
