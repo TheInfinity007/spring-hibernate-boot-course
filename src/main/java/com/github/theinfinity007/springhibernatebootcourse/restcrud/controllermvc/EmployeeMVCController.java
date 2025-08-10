@@ -1,4 +1,4 @@
-package com.github.theinfinity007.springhibernatebootcourse.restcrud;
+package com.github.theinfinity007.springhibernatebootcourse.restcrud.controllermvc;
 
 import com.github.theinfinity007.springhibernatebootcourse.restcrud.entity.Employee;
 import com.github.theinfinity007.springhibernatebootcourse.restcrud.service.EmployeeService;
