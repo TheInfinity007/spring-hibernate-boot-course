@@ -4,10 +4,7 @@ import com.github.theinfinity007.springhibernatebootcourse.restcrud.entity.Emplo
 import com.github.theinfinity007.springhibernatebootcourse.restcrud.service.EmployeeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +30,16 @@ public class EmployeeMVCController {
     public String showFormForAdd(Model model){
         // create model attribute to bind form data
         Employee employee = new Employee();
+
+        model.addAttribute("employee", employee);
+
+        return "employees/employee-form";
+    }
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("employeeId") int empId, Model model){
+        // create model attribute to bind form data
+        Employee employee = employeeService.findById(empId);
 
         model.addAttribute("employee", employee);
 
