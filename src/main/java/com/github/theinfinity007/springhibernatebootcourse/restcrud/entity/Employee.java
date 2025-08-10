@@ -20,7 +20,7 @@ public class Employee {
     @Column(name = "email")
     private String email;
 
-    Employee(){}
+    public Employee(){}
 
     public Employee(String firstName, String lastName, String email) {
         this.firstName = firstName;
