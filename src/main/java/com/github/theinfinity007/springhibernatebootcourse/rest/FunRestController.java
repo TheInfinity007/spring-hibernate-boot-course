@@ -14,10 +14,10 @@ public class FunRestController {
     @Value("${team.name}")
     private String teamName;
 
-    @GetMapping("/")
-    public String sayHello() {
-        return "Hello World!";
-    }
+//    @GetMapping("/")
+//    public String sayHello() {
+//        return "Hello World!";
+//    }
 
     @GetMapping("/workout")
     public String getDailyWorkout() {
