@@ -55,5 +55,12 @@ public class EmployeeMVCController {
         return "redirect:/mvc/employees/list";
     }
 
+    @GetMapping("/delete")
+    public String deleteEmployee(@RequestParam("employeeId") int empId, Model model){
+        employeeService.deleteById(empId);
+
+        return "redirect:/mvc/employees/list";
+    }
+
 
 }
