@@ -69,7 +69,7 @@ logging:
   level:
 #    org.springframework.boot.actuate.endpoint: DEBUG
     # Reduce logging level, set logging level to warn
-    root: warn
+    root: info
 
     # add logging configs to display SQL statements and values as well with the help of jdbc bind
     org:
