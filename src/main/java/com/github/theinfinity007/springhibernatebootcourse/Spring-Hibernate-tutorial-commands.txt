@@ -257,5 +257,32 @@ View Template
     - Displays data
 
 
+# Spring Security
+
+
+Concepts
+* Authentication
+    check user id and password with creds stored in app/db
+* Authorization
+    check to see if the user has an authorized role
+
+Declarative Security
+* Define application's security constrains in configuration
+    All java config: @Configuration
+
+* Provides separation of concerns b/w application code and security
+
+Programmatic Security
+* Spring Security provides an API for custom application coding
+* Provides greater customization for specific app requirements
+
+
+Different Login Methods
+* Http Basic authentication
+* Default login form (provided by spring)
+* Custom login form
+
+
+
 
 
