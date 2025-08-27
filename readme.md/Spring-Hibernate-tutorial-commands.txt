@@ -225,7 +225,7 @@ INSERT INTO roles VALUES
 ```
 
 ------------------------------------------------------------------------------------------
-
+# Spring MVC
 Components of a spring MVC Application
 
 * A set of web pages to layout UI components
@@ -242,7 +242,7 @@ Web Browse          <-      View Template
 
 Model -> Model objects contains data
 
-Controller
+### Controller
 * Code created by developer
 * Contains your business logic
     - Handle the request
@@ -250,7 +250,7 @@ Controller
     - Place data in model
 * Send to appropriate view template
 
-Model
+### Model
 * Contains your data (Container for the application data)
 * Store/retrieve data via backend systems
     - database, web service, etc...
@@ -258,7 +258,7 @@ Model
 * Place your data in the model
     - Data can be any java object/collection
 
-View Template
+### View Template
 * Spring MVC is flexible
     - support many view templates eg. thymeleaf
 * Recommended: Thymeleaf
@@ -269,24 +269,24 @@ View Template
 # Spring Security
 
 
-Concepts
+### Concepts
 * Authentication
     check user id and password with creds stored in app/db
 * Authorization
     check to see if the user has an authorized role
 
-Declarative Security
+### Declarative Security
 * Define application's security constrains in configuration
     All java config: @Configuration
 
 * Provides separation of concerns b/w application code and security
 
-Programmatic Security
+### Programmatic Security
 * Spring Security provides an API for custom application coding
 * Provides greater customization for specific app requirements
 
 
-Different Login Methods
+#### Different Login Methods
 * Http Basic authentication
 * Default login form (provided by spring)
 * Custom login form
