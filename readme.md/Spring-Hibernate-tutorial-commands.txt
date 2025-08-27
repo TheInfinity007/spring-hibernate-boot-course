@@ -50,26 +50,26 @@ Scan base package config
 
 --------------------------------------
 
-Hibernate
+# Hibernate
 * Frameworkd for persisting /saving Java Objects in a database
 * hibernate.org/orm
 
-Benefits of Hibernate:
+### Benefits of Hibernate:
 * Handles all low level SQL
 * minimize the amount of JDBC code you have to devleop
 * provide the object to relational mapping (ORM)
 
-JPA
+# JPA
 * Jakarta persistence API (previously know as Java Persistence API)
 * Standard API for object to relational mapping (ORM)
 * Only a specification
 * Defines a set of interfaces
 * Requires an implementation to be usable
 
-Vendors implementing JPA
+#### Vendors implementing JPA
 Hibernate, EclipseLink, etc
 
-Benefits of JPA
+### Benefits of JPA
 * By having a stardard API, you are not locked to vendor's implementation
 * Maintain portable, flexible code by coding to JPA spec (interfaces)
 * Can theoretically switch vendor implementations
@@ -88,30 +88,30 @@ text/html, text/plain
 application/json, application/xml,..
 
 
-Jackson Data binding
+# Jackson Data binding
 JSON-to-POJO(deserialization) -> setter method
 POJO-to-JSON (serialization) -> getter method
 
-Error Handline
+# Error Handling
 * Create a custom error response class
 * Create a custom exception class
 * Update the rest endpoint to throw exception if entity is not found
 * Add an exception handler method using @ExceptionHandler
 
 
-@ControllerAdvice
+# Annotation
+**@ControllerAdvice**
 * similar to interceptor / filter
 * pre process requests to controllers
 * post process response to handle exceptions
 * Perfect for global exception handling
 
-
-@Service
+**@Service**
 * applied to service implementations
 * spring will automatically register the service implementation using component scanning
 
 
-ObjectMapper - Jackson
+# ObjectMapper - Jackson
 * ObjectMapper is a helper class in the jackson library for JSON processing
 * it provides the following support
     - convert java object to json and vice-versa
@@ -120,12 +120,12 @@ ObjectMapper - Jackson
 * It is pre-configured by spring boot
 
 
-* Swagger
+# Swagger
 * Default: http://localhost:8080/swagger-ui/index.html
 * Application config to update the path
     - springdoc.swagger-ui.path=/documentation.html
 
-
+```
 CREATE TABLE `student` (
   `id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(255) DEFAULT NULL,
@@ -133,8 +133,9 @@ CREATE TABLE `student` (
   `last_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
 
-
+```
 CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
@@ -142,8 +143,9 @@ CREATE TABLE `users` (
   PRIMARY KEY (`username`)
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+```
 
-
+```
 CREATE TABLE `authorities` (
   username varchar(50) NOT NULL,
   authority varchar(50) NOT NULL,
@@ -154,17 +156,18 @@ CREATE TABLE `authorities` (
 
   FOREIGN KEY (`username`)
   REFERENCES `users` (`username`)
-
-
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+```
 
-
+```
 INSERT INTO users
 values
 ('john2', '{noop}test123', 1),
 ('mary2', '{noop}test123', 1),
 ('susan2', '{noop}test123', 1)
+```
 
+```
 INSERT INTO authorities VALUES
 ('john2', 'ROLE_EMPLOYEE'),
 ('mary2', 'ROLE_EMPLOYEE'),
@@ -172,7 +175,7 @@ INSERT INTO authorities VALUES
 ('mary2', 'ROLE_MANAGER'),
 ('susan2', 'ROLE_MANAGER'),
 ('susan2', 'ROLE_ADMIN')
-
+```
 
 
 
@@ -281,6 +284,34 @@ Different Login Methods
 * Http Basic authentication
 * Default login form (provided by spring)
 * Custom login form
+
+--------------------------------------------------------------------
+
+# JPA/Hibernate Advanced Mappings
+
+## @OneToOne Mapping
+
+```
+@Entity
+@Table(name="instructor")
+class Instructor {
+...
+
+@OneToOne
+@JoinColumn(name="instructor_detail_id")
+private InstructorDetail instructorDetail;
+
+...
+}
+```
+
+For the instructor class we have a JoinColumn called instructor_detail_id.
+The using this information hibernate can go off and use the foreign key,
+find the instructor detail record and load the data accordingly.
+
+So, hibernate will go ahead and do the work in the background and
+then in memory we'll have an instructor object along with the related instructor detail entity.
+
 
 
 
