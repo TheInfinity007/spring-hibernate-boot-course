@@ -312,6 +312,17 @@ find the instructor detail record and load the data accordingly.
 So, hibernate will go ahead and do the work in the background and
 then in memory we'll have an instructor object along with the related instructor detail entity.
 
+# Entity Lifecycle
+The entity lifecycle is basically a set of states that a hibernate entity can go through when we are using it in the application.
+
+
+| Operation | Description |
+|-----------|-------------|
+| Detach    | If the entity is detached, it is not associated with a hibernate session |
+| Merge     | If instance is detached from session, then merge will reattach to the session |
+| Persist   | Transitions new instance to managed state. Next flush / commit will save in db |
+| Remove    | Transitions managed entity to be removed. Next flush / commit will delete from db |
+| Refresh   | Reload / synch object with the data from db. Prevents stale data
 
 
 
