@@ -45,7 +45,7 @@ spring.datasource.password=liger
 Scan base package config
 
 @SpringBootApplication(
-    scanBasePackages = { "com.github.theinfinity.com.mainapp", "com.github.theinfinity.com.secondapp"}
+scanBasePackages = { "com.github.theinfinity.com.mainapp", "com.github.theinfinity.com.secondapp"}
 )
 
 --------------------------------------
@@ -73,8 +73,8 @@ Hibernate, EclipseLink, etc
 * By having a stardard API, you are not locked to vendor's implementation
 * Maintain portable, flexible code by coding to JPA spec (interfaces)
 * Can theoretically switch vendor implementations
-     For eg, if vendor ABC stops supporting their product
-     you could switch to vendor XYZ without vendor lock in
+  For eg, if vendor ABC stops supporting their product
+  you could switch to vendor XYZ without vendor lock in
 
 Weather report
 currency converter app
@@ -234,9 +234,9 @@ Components of a spring MVC Application
 
 
 Web Browser         -> Front Controller ( Dispatcher servlet )
-                                | (model)
-                            Controller
-                                | (model)
+| (model)
+Controller
+| (model)
 Web Browse          <-      View Template
 
 
@@ -271,13 +271,13 @@ Model -> Model objects contains data
 
 ### Concepts
 * Authentication
-    check user id and password with creds stored in app/db
+  check user id and password with creds stored in app/db
 * Authorization
-    check to see if the user has an authorized role
+  check to see if the user has an authorized role
 
 ### Declarative Security
 * Define application's security constrains in configuration
-    All java config: @Configuration
+  All java config: @Configuration
 
 * Provides separation of concerns b/w application code and security
 
@@ -357,3 +357,8 @@ CREATE TABLE `instructor` (
 ) Engine=InnoDB AUTO_INCREMENT=1 Charset=Latin1;
 ```
 
+# AOP (Aspect-Oriented Programming)
+* Programming techinique based on concept of an Aspect
+* Aspect encapsulates cross-cutting logic
+  `Cross-Cutting Concerns`
+* "Concern" means logic/functionality
