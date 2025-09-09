@@ -362,3 +362,93 @@ CREATE TABLE `instructor` (
 * Aspect encapsulates cross-cutting logic
   `Cross-Cutting Concerns`
 * "Concern" means logic/functionality
+
+## Aspects
+* Aspect can be reused at multiple locations
+* Same aspect/class ... applied based on configurations
+
+### Benefits of AOP
+* Code for Aspect is defined in a single class
+  * Much better than being scattered everywhere
+  * Promotes code reuse and easier to change
+* Business code in your application is cleaner
+  * Only applies to business functionality: Eg, addAccount
+  * Reduce code complexity
+* Configurable
+  * Based on configuration, apply Aspects selectively to different parts of app
+  * No need to make changes to main application code ... very important!
+
+### Additional AOP Use Cases
+* Most common
+  * logging, security, transactions
+* Audit logging
+  * who, what, when, where
+* Exception Handling
+  * log exceptions and notify DevOps team via SMS/email or push it to the monitoring system
+* API Management
+  * how many times has a method been called by the user
+  * analytics: what are peak times ? what is average load ? Who is top user ?
+
+## AOP Advantages and Disadvanges
+Advantages:
+  Reusable modules
+  Resolve code tangling
+  Resolve code scatter
+  Applied selectively based on configuration
+
+Disadvantages:
+  Too many aspects and app flow is hard to follow
+  Minor performance cost for aspect execution (run time weaving)
+
+## AOP Terminology
+* Aspect - module of code for a cross-cutting concern (logging, security, ...)
+* Advice - What action is taken and when it should be applied
+* Join Point - When to apply code during program execution
+* Pointcut - A predicate expression for where advice should be applied
+
+## Advice Types
+* Before advice - run before the method
+* After finally advice - run after the method (finally)
+* After returning advice - run after the method (success execution)
+* After throwing advice - run after method (if exception thrown)
+* Around advice - run before and after method
+
+## Weaving
+* Connecting aspects to target objects to create an advised object
+* Different types of weaving
+  * Compile-time, load-time or run-time
+* Regarding performance: run -time weaving is the slowest
+
+# AOP Frameworks
+* Two leading AOP Frameworks for Java
+1. Spring AOP
+2. AspectJ
+
+### Spring AOP 
+* Spring provides AOP support
+* Key component of spring
+  * Security, transactions, caching etc
+* Uses run-time weaving of aspects
+
+### AspectJ
+* Original AOP framework
+* Provides complete support for AOP
+* Rich support for
+  * Join points: method-level, constructor, field
+  * code weaving: compile-time, post compile-time and load time
+
+### Spring AOP Comparison
+| Advantages                                           | Disadvantages                                                  |
+|------------------------------------------------------|----------------------------------------------------------------|
+| Simpler to use than Aspect                           | Only support method-level join points                          |
+| Uses Proxy pattern                                   | Can only apply aspects to beans created by spring app context  |
+| Can migrate to AspectJ when using @Aspect annotation | Minor performance cost for aspect-execution (run-time weaving) |
+
+
+### AspectJ
+| Advantages                                           | Disadvantages                                        |
+|------------------------------------------------------|------------------------------------------------------|
+| Support all join points                              | Compile time weaving requires extra compilation step |
+| Works with any POJO, not just beans from app context | AspectJ pointcut syntax can become complex           |
+| Faster performance compared to Spring AOP            ||
+| Complete AOP Support                                 ||
