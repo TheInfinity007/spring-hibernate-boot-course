@@ -226,6 +226,10 @@ INSERT INTO roles VALUES
 
 ------------------------------------------------------------------------------------------
 # Spring MVC
+
+
+Repo for Thymeleaf: [Spring mvc thymeleaf](https://github.com/TheInfinity007/spring-thymeleaf-learn)
+
 Components of a spring MVC Application
 
 * A set of web pages to layout UI components
@@ -268,6 +272,8 @@ Model -> Model objects contains data
 
 # Spring Security
 
+Repo for security: [Spring security starter](https://github.com/TheInfinity007/spring-security-starter)
+
 
 ### Concepts
 * Authentication
@@ -294,6 +300,7 @@ Model -> Model objects contains data
 --------------------------------------------------------------------
 
 # JPA/Hibernate Advanced Mappings
+Repository link: [Hibernate advanced cli](https://github.com/TheInfinity007/spring-hibernate-advance-mapping-cli)
 
 ## @OneToOne Mapping
 
