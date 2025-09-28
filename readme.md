@@ -365,6 +365,9 @@ CREATE TABLE `instructor` (
 ```
 
 # AOP (Aspect-Oriented Programming)
+
+Repo Link: [spring-aop](https://github.com/TheInfinity007/spring-aop-starter)
+
 * Programming techinique based on concept of an Aspect
 * Aspect encapsulates cross-cutting logic
   `Cross-Cutting Concerns`
@@ -460,4 +463,3 @@ Disadvantages:
 | Faster performance compared to Spring AOP            ||
 | Complete AOP Support                                 ||
 
-Detailed Repo: [spring-aop](https://github.com/TheInfinity007/spring-aop-starter)
