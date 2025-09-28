@@ -31,7 +31,7 @@ spring:
       password: admin
 
 server:
-  port: 8585
+  port: 8000
 #  servlet:
 #    context-path: /api
 

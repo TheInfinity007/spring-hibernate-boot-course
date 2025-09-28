@@ -1,6 +1,7 @@
 package com.github.theinfinity007.springhibernatebootcourse.restcrud.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -47,6 +48,21 @@ public class LoggingAspect {
         for(Object arg: args){
             logger.info("===========> in @Before: arguments: " + arg);
         }
+    }
+
+    @AfterReturning(
+            pointcut = "forAppFlow()",
+            returning = "result"
+    )
+    public void afterReturning(JoinPoint joinPoint, Object result){
+        // Display the method being called
+        String method = joinPoint.getSignature().toShortString();
+        logger.info("===========> in @AfterReturning: from method: " + method);
+
+        // display the result
+        logger.info("===========> in @AfterReturning: result: " + result);
+
+
     }
 
 }
